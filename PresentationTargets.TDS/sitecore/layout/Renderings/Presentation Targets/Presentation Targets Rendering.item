@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {FE287E54-FEBF-407C-B251-DE95BF4FB2C0}
+database: master
+path: /sitecore/layout/Renderings/Presentation Targets/Presentation Targets Rendering
+parent: {75547A6A-5189-4247-A5F7-D380871007C7}
+name: Presentation Targets Rendering
+master: {00000000-0000-0000-0000-000000000000}
+template: {D011A569-D98B-4C1F-9D77-E45BF5ADDE02}
+templatekey: Target Placeholders Rendering
+
+----field----
+field: {04F2D6D8-7748-425C-A435-B63C4FFBF43E}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{9F5A0878-5BE3-4693-B1A6-95545BF8C31F}
+----field----
+field: {A6ABF68E-B797-475E-A913-4DD945BBD83F}
+name: Open Properties after Add
+key: open properties after add
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: c90e6d5c-c193-4656-82ea-45f881a8dbeb
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160415T141815Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c90e6d5c-c193-4656-82ea-45f881a8dbeb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160416T213906Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
