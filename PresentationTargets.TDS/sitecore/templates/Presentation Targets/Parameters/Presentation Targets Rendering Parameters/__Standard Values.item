@@ -2,7 +2,7 @@
 version: 1
 id: {4F0C8A04-A947-4C80-8B59-5F4EB498CBA7}
 database: master
-path: /sitecore/templates/Presentation Targets/Presentation Targets Rendering Parameters/__Standard Values
+path: /sitecore/templates/Presentation Targets/Parameters/Presentation Targets Rendering Parameters/__Standard Values
 parent: {9F5A0878-5BE3-4693-B1A6-95545BF8C31F}
 name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}

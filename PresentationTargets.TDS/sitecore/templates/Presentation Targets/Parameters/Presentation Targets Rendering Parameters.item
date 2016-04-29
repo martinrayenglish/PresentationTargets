@@ -2,8 +2,8 @@
 version: 1
 id: {9F5A0878-5BE3-4693-B1A6-95545BF8C31F}
 database: master
-path: /sitecore/templates/Presentation Targets/Presentation Targets Rendering Parameters
-parent: {D83DF75F-0FEB-4AC1-B5EB-E47D2DC04562}
+path: /sitecore/templates/Presentation Targets/Parameters/Presentation Targets Rendering Parameters
+parent: {E16ECA1E-B626-40F5-B705-38CAE117498C}
 name: Presentation Targets Rendering Parameters
 master: {00000000-0000-0000-0000-000000000000}
 template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
@@ -26,7 +26,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 9b1ce275-0b41-4a60-a7cb-7c80c149b6a7
+revision: 390031a4-db47-4f2b-b030-07f36c13e6bd
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9b1ce275-0b41-4a60-a7cb-7c80c149b6a7
+390031a4-db47-4f2b-b030-07f36c13e6bd
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160416T213844Z
+20160429T204104Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

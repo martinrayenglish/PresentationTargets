@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {086A0204-DDDA-40EE-B062-64D0187CB160}
+id: {E16ECA1E-B626-40F5-B705-38CAE117498C}
 database: master
-path: /sitecore/templates/Presentation Targets/Presentation Targets Rendering Parameters/Presentation Targets
-parent: {9F5A0878-5BE3-4693-B1A6-95545BF8C31F}
-name: Presentation Targets
+path: /sitecore/templates/Presentation Targets/Parameters
+parent: {D83DF75F-0FEB-4AC1-B5EB-E47D2DC04562}
+name: Parameters
 master: {00000000-0000-0000-0000-000000000000}
-template: {E269FBB5-3750-427A-9149-7AA950B49301}
-templatekey: Template section
+template: {0437FEE2-44C9-46A6-ABE9-28858D9FEE8C}
+templatekey: Template Folder
 
 ----version----
 language: en
 version: 1
-revision: 43bd90a3-28ff-417b-a2a3-fcc9e13e2be6
+revision: fe7d30e0-8634-41f0-b14b-8c7067e66860
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -20,7 +20,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20151127T205009Z
+20160429T204047Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -34,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-43bd90a3-28ff-417b-a2a3-fcc9e13e2be6
+fe7d30e0-8634-41f0-b14b-8c7067e66860
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160416T213227Z
+20160429T204047Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

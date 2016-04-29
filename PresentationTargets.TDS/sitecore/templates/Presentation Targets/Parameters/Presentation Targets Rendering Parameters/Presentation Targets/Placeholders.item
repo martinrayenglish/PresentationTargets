@@ -2,7 +2,7 @@
 version: 1
 id: {D072FF8A-3B17-4A3C-9FF1-126388BCF32B}
 database: master
-path: /sitecore/templates/Presentation Targets/Presentation Targets Rendering Parameters/Presentation Targets/Placeholders
+path: /sitecore/templates/Presentation Targets/Parameters/Presentation Targets Rendering Parameters/Presentation Targets/Placeholders
 parent: {086A0204-DDDA-40EE-B062-64D0187CB160}
 name: Placeholders
 master: {00000000-0000-0000-0000-000000000000}

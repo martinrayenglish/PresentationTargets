@@ -2,7 +2,7 @@
 version: 1
 id: {D0872D96-D18A-4BA5-9ADB-DC4A36FDB650}
 database: master
-path: /sitecore/templates/Presentation Targets/Presentation Targets Rendering Parameters/Presentation Targets/Renderings
+path: /sitecore/templates/Presentation Targets/Parameters/Presentation Targets Rendering Parameters/Presentation Targets/Renderings
 parent: {086A0204-DDDA-40EE-B062-64D0187CB160}
 name: Renderings
 master: {00000000-0000-0000-0000-000000000000}

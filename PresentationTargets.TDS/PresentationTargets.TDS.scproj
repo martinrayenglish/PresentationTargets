@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -32,6 +33,16 @@
     <DisableFileDeployment>False</DisableFileDeployment>
     <SitecoreDeployFolder>C:\inetpub\wwwroot\HFEDev\Website</SitecoreDeployFolder>
     <SitecoreAccessGuid>8a2b277c-af82-4586-bfd3-a6181c2c49ac</SitecoreAccessGuid>
+    <PackageName>PresentationTargets.TDS</PackageName>
+    <PackageAuthor />
+    <PackagePublisher />
+    <PackageVersion />
+    <PackageReadme />
+    <SitecoreAssemblyPath>C:\Projects\HFEResponsive\packages\Sitecore.81.References.1.0.1\lib\net45</SitecoreAssemblyPath>
+    <GeneratePackage>True</GeneratePackage>
+    <SeperateFilesAndItems>False</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>True</AddDateTimeToPackageName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -77,26 +88,34 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\Presentation Targets\Presentation Targets Rendering Parameters.item">
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\Presentation Targets\Presentation Targets Rendering Parameters\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\Presentation Targets\Presentation Targets Rendering Parameters\Presentation Targets.item">
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\Presentation Targets\Presentation Targets Rendering Parameters\Presentation Targets\Placeholders.item">
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\Presentation Targets.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\Presentation Targets\Presentation Targets Rendering Parameters\Presentation Targets\Renderings.item">
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\Presentation Targets\Placeholders.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\Presentation Targets\Renderings.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Target Placeholders Rendering.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
 </Project>
