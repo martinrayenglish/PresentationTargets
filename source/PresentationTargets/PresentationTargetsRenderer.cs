@@ -4,7 +4,12 @@ using System.Linq;
 using System.Web;
 
 using Sitecore;
+using Sitecore.Analytics.Pipelines.GetRenderingRules;
+using Sitecore.Analytics.Pipelines.RenderingRuleEvaluated;
+using Sitecore.Layouts;
 using Sitecore.Mvc.Presentation;
+using Sitecore.Rules;
+using Sitecore.Rules.ConditionalRenderings;
 
 namespace PresentationTargets
 {
@@ -14,9 +19,16 @@ namespace PresentationTargets
         protected override List<Rendering> GetRenderings()
         {
             var renderings = new List<Rendering>();
+
+            if (Params == null)
+            {
+                Params = new RenderingParameters(string.Empty);
+            }
+
             var paramPlaceholders = Params.Where(k => k.Key.Equals(Constants.Settings.PlaceholdersParameterKey, StringComparison.CurrentCultureIgnoreCase)).Select(v => v.Value.ToLowerInvariant());
             var paramRenderings = Params.Where(k => k.Key.Equals(Constants.Settings.RenderingsParameterKey, StringComparison.CurrentCultureIgnoreCase)).Select(v => v.Value.ToLowerInvariant());
-
+            var paramPersonalization = Params.Where(k => k.Key.Equals(Constants.Settings.PersonalizationRules, StringComparison.CurrentCultureIgnoreCase)).Select(v => v.Value.ToLowerInvariant());
+            
             var refs = Item.Visualization.GetRenderings(Context.Device, false);
             if (!refs.Any())
                 return null;
@@ -34,22 +46,58 @@ namespace PresentationTargets
                 {
                     var targetPlaceholders = paramPipe.Split('|').ToList();
                 
-                    renderings.AddRange(renderingReferences.Where(p => targetPlaceholders.Contains(p.Placeholder.ToLowerInvariant())).Select(r => new Rendering
+                    foreach (var renderingReference in renderingReferences)
                     {
-                        RenderingItemPath = r.RenderingID.ToString(),
-                        Parameters = new RenderingParameters(HttpUtility.UrlDecode(r.Settings.Parameters)),
-                        DataSource = r.Settings.DataSource
-                    }));
+                        foreach (var targetPlaceholder in targetPlaceholders)
+                        {
+                            if (renderingReference.Placeholder.Contains(targetPlaceholder))
+                            { 
+                                var currentRendering = new Rendering
+                                {
+                                    RenderingItemPath = renderingReference.RenderingID.ToString(),
+                                    Parameters = new RenderingParameters(HttpUtility.UrlDecode(renderingReference.Settings.Parameters)),
+                                    DataSource = renderingReference.Settings.DataSource
+                                };
+
+                                if (paramPersonalization.Any())
+                                {
+                                    var paramPersonalize = paramPersonalization.FirstOrDefault();
+
+                                    if (paramPersonalize != null && paramPersonalize == "1")
+                                    {
+                                        PersonalizeRendering(renderingReference, currentRendering);
+                                    }
+                                }
+
+								renderings.Add(currentRendering);
+							}
+                        }
+                    }
                 }
             }
             else
             {
-                renderings.AddRange(renderingReferences.Select(r => new Rendering
+                foreach (var renderingReference in renderingReferences)
                 {
-                    RenderingItemPath = r.RenderingID.ToString(),
-                    Parameters = new RenderingParameters(HttpUtility.UrlDecode(r.Settings.Parameters)),
-                    DataSource = r.Settings.DataSource
-                }));
+                    var currentRendering = new Rendering
+                    {
+                        RenderingItemPath = renderingReference.RenderingID.ToString(),
+                        Parameters = new RenderingParameters(HttpUtility.UrlDecode(renderingReference.Settings.Parameters)),
+                        DataSource = renderingReference.Settings.DataSource
+                    };
+
+                    if (paramPersonalization.Any())
+                    {
+                        var paramPersonalize = paramPersonalization.FirstOrDefault();
+
+                        if (paramPersonalize != null && paramPersonalize == "1")
+                        {
+                            PersonalizeRendering(renderingReference, currentRendering);
+                        }
+                    }
+
+					renderings.Add(currentRendering);
+				}
             }
 
             //Rendering Filtering
@@ -67,6 +115,63 @@ namespace PresentationTargets
             }
 
             return renderings;
+        }
+        private void PersonalizeRendering(RenderingReference renderingReference, Rendering currentRendering)
+        {
+	        var renderingsRuleContext = new ConditionalRenderingsRuleContext(new List<RenderingReference>
+	        {
+		        renderingReference
+	        }, renderingReference);
+
+            var renderingRulesArgs = new GetRenderingRulesArgs(Item, renderingReference);
+            GetRenderingRulesPipeline.Run(renderingRulesArgs);
+            var ruleList = renderingRulesArgs.RuleList;
+
+            ruleList.Evaluated += RulesEvaluatedHandler;
+            ruleList.RunFirstMatching(renderingsRuleContext);
+
+            var reference = renderingsRuleContext.References.Find(r => r.UniqueId == renderingsRuleContext.Reference.UniqueId);
+
+            if (reference != null)
+            {
+                TransferRenderingItem(currentRendering, reference);
+                TransferDataSource(currentRendering, reference);
+            }
+        }
+
+        private static void RulesEvaluatedHandler(RuleList<ConditionalRenderingsRuleContext> ruleList, ConditionalRenderingsRuleContext ruleContext, Rule<ConditionalRenderingsRuleContext> rule)
+        {
+            RenderingRuleEvaluatedPipeline.Run(new RenderingRuleEvaluatedArgs(ruleList, ruleContext, rule));
+        }
+
+        private static void TransferDataSource(Rendering rendering, RenderingReference reference)
+        {
+            var dataSource = reference.Settings.DataSource;
+
+            if (string.IsNullOrEmpty(dataSource) || dataSource.Equals(rendering.DataSource))
+            {
+                return;
+            }
+
+            rendering.DataSource = dataSource;
+
+            var item = reference.Database.GetItem(dataSource);
+            if (item == null)
+            {
+                return;
+            }
+
+            rendering.Item = item;
+        }
+
+        private static void TransferRenderingItem(Rendering rendering, RenderingReference reference)
+        {
+            if (reference.RenderingItem == null)
+            {
+                return;
+            }
+
+            rendering.RenderingItem = reference.RenderingItem;
         }
     }
 }
