@@ -28,10 +28,10 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\bin\Debug\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
-    <SitecoreWebUrl>http://hfedev</SitecoreWebUrl>
+    <SitecoreWebUrl>http://sc82u5</SitecoreWebUrl>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>False</DisableFileDeployment>
-    <SitecoreDeployFolder>C:\inetpub\wwwroot\HFEDev\Website</SitecoreDeployFolder>
+    <SitecoreDeployFolder>C:\inetpub\wwwroot\sc82u5\Website</SitecoreDeployFolder>
     <SitecoreAccessGuid>8a2b277c-af82-4586-bfd3-a6181c2c49ac</SitecoreAccessGuid>
     <PackageName>PresentationTargets.TDS</PackageName>
     <PackageAuthor />
@@ -101,6 +101,10 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\Presentation Targets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\Presentation Targets\Personalization.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
