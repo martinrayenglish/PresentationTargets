@@ -104,7 +104,7 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\Presentation Targets\Personalization.item">
+    <SitecoreItem Include="sitecore\templates\Presentation Targets\Parameters\Presentation Targets Rendering Parameters\Presentation Targets\Personalized.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>

@@ -2,9 +2,9 @@
 version: 1
 id: {02EA743E-19EE-40D1-B678-83040C805FC5}
 database: master
-path: /sitecore/templates/Presentation Targets/Parameters/Presentation Targets Rendering Parameters/Presentation Targets/Personalization
+path: /sitecore/templates/Presentation Targets/Parameters/Presentation Targets Rendering Parameters/Presentation Targets/Personalized
 parent: {086A0204-DDDA-40EE-B062-64D0187CB160}
-name: Personalization
+name: Personalized
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -27,8 +27,15 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 3ec3ea90-681a-46fd-9c8a-5bc421334c5c
+revision: 59a5d879-c475-4c36-b8ac-a9586804d172
 
+----field----
+field: {9541E67D-CE8C-4225-803D-33F7F29F09EF}
+name: __Short description
+key: __short description
+content-length: 41
+
+Apply personalization rules set on target
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -42,14 +49,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3ec3ea90-681a-46fd-9c8a-5bc421334c5c
+59a5d879-c475-4c36-b8ac-a9586804d172
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170909T131802Z
+20170909T133545Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

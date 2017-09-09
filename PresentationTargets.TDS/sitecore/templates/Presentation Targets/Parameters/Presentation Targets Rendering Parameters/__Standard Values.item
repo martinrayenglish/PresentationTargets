@@ -24,8 +24,8 @@ revision: 4ff8894f-e1ed-49ae-9fa1-4c9a7d7e7e20
 
 ----field----
 field: {02EA743E-19EE-40D1-B678-83040C805FC5}
-name: Personalization
-key: personalization
+name: Personalized
+key: personalized
 content-length: 1
 
 1
