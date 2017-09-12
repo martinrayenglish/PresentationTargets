@@ -7,7 +7,7 @@
             public static string RenderingTemplateId = "{86776923-ECA5-4310-8DC0-AE65FE88D078}";
             public static string PlaceholdersParameterKey = "placeholders";
             public static string RenderingsParameterKey = "renderings";
-            public static string PersonalizationRules = "personalization";
+            public static string PersonalizationRules = "personalized";
         }
     }
 }
