@@ -8,6 +8,7 @@ name: Presentation Targets Rendering
 master: {00000000-0000-0000-0000-000000000000}
 template: {D011A569-D98B-4C1F-9D77-E45BF5ADDE02}
 templatekey: Target Placeholders Rendering
+created: 20170909T130148Z
 
 ----field----
 field: {04F2D6D8-7748-425C-A435-B63C4FFBF43E}
@@ -23,10 +24,17 @@ key: open properties after add
 content-length: 1
 
 1
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 24
+
+People/16x16/target2.png
 ----version----
 language: en
 version: 1
-revision: c90e6d5c-c193-4656-82ea-45f881a8dbeb
+revision: 8660779a-f222-427b-b428-ed50b07b9ddc
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +49,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c90e6d5c-c193-4656-82ea-45f881a8dbeb
+8660779a-f222-427b-b428-ed50b07b9ddc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160416T213906Z
+20170912T123140Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
